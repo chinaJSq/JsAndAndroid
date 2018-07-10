@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+body {
+	background-color: #FF0;
+}
+.btn{
+	line-height:36px;
+	margin:2px;
+	padding:10px;
+	background:#666;
+	}
+</style>
+</head>
+
+<body>
+	<div><span>请输入：</span><input type="text" id="text"></div>
+<div id="btn"><span class="btn">点我点我</span></div>
+<script type="text/javascript">
+	var btn = document.getElementById("btn");
+	var text = document.getElementById("text");
+	btn.addEventListener("click",function(){
+		var str = text.value;
+		if(window.testJsInterface){
+			testJsInterface.setValue(str);
+		}else{
+			alert("no found");
+		}
+	})
+	var remote = function(str){
+		text.value = str;
+	}
+</script>
+</body>
+</html>
